@@ -1,0 +1,19 @@
+# Ignore anything in the build directory (for jshint output, specs, coverage, etc.)
+build
+# Except Cesium's build dir in ThirdParty
+!ThirdParty/Cesium/Build
+
+# Ignore anything in the dist directory (for built outputs for website)
+dist
+
+# Ignore log files
+*.log
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+# node-waf configuration
+.lock-wscript
+
+

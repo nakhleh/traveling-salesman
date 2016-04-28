@@ -1,0 +1,27 @@
+{
+    "params": {
+        "populationSize": 10,
+        "numMutations": 3,
+        "minLifetime": 10,
+        "genLimit": 50
+    },
+    "globe": {
+        "startView": { "lon": -75.30, "lat": 40.11, "alt": 7e4 },
+        "textFader": { "near": 5e4, "far": 2e5 }
+    },
+    "startNode": "K",
+    "nodes": [
+        { "id": "A", "name": "Abington",         "lat": 40.12066560, "lon": -75.11795120 },
+        { "id": "B", "name": "Bridgeport",       "lat": 40.10375882, "lon": -75.34883426 },
+        { "id": "C", "name": "Conshohocken",     "lat": 40.07927660, "lon": -75.30157140 },
+        { "id": "E", "name": "Eagleville",       "lat": 40.15955010, "lon": -75.40823850 },
+        { "id": "F", "name": "Fort Washington",  "lat": 40.14177610, "lon": -75.20906500 },
+        { "id": "G", "name": "Gulph Mills",      "lat": 40.06983160, "lon": -75.33990770 },
+        { "id": "H", "name": "Haverford",        "lat": 40.01316720, "lon": -75.29435160 },
+        { "id": "K", "name": "King Of Prussia",  "lat": 40.08927460, "lon": -75.39602110 },
+        { "id": "N", "name": "Norristown",       "lat": 40.12149700, "lon": -75.33990480 },
+        { "id": "P", "name": "Plymouth Meeting", "lat": 40.10233200, "lon": -75.27434670 },
+        { "id": "R", "name": "Radnor",           "lat": 40.04622080, "lon": -75.35991050 },
+        { "id": "W", "name": "Wayne",            "lat": 40.04399820, "lon": -75.38769050 }
+    ]
+}

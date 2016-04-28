@@ -1,0 +1,142 @@
+@import url(/Cesium/Widgets/widgets.css);
+@import url(/iconfont/material-icons.css);
+
+html, body, .main {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-flow: row;
+}
+
+#globe {
+    flex: 1 1 0;
+    background: #aaaaaa;
+}
+
+#slider {
+    flex: 0 0 0.25em;
+    /*width: 0.25em;*/
+    cursor: ew-resize;
+    background: cornflowerblue;
+}
+
+#sidebar {
+    flex: 0 0 350px;
+    display: flex;
+    flex-flow: column;
+    background: #bbbbbb;
+    /*width: 350px;*/
+}
+#sidebar>div {
+    flex: 0 0 auto;
+}
+#sidebar>div.grow {
+    flex: 1 0 auto;
+}
+
+#controls {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+div.section {
+    padding: 0px;
+    border-bottom: solid thin blue;
+}
+
+label {
+    color: #444444;
+    font-family: "Open Sans";
+    font-size: smaller;
+}
+
+label.sectionMarker {
+    flex: 0;
+    color: blue;
+    background-color: #bbbbcc;
+    margin-top: 0.25rem;
+}
+#controls>button {
+    flex: 1;
+}
+
+.inputParms {
+    display: flex;
+    flex-flow: column;
+}
+.inputParms>label {
+    flex: 1;
+    text-align: center;
+}
+.inputParms>input {
+    flex: 1;
+    width: 100%;
+    border-style: hidden hidden solid;
+    border-color: cornflowerblue;
+    padding: 0px;
+    margin: 0px 2px;
+    text-align: right;
+}
+
+.bestSolution {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+.bestSolution>label {
+    flex: 0 0 auto;
+}
+.bestSolution>span {
+    flex: 1 0 auto;
+    color: maroon;
+}
+
+#graphs {
+    display: flex;
+    flex-flow: column;
+}
+#graphs>label {
+    flex: 0 0 auto;
+    text-align: center;
+}
+#graphs>div {
+    flex: 1 0 0;
+    background-color: #dddddd;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+
+/* Graph Styling */
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: mediumseagreen;
+}
+
+.axis {
+  font-size: smaller;
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

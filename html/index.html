@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Traveling Salesman Problem</title>
+
+        <!-- mobile responsiveness: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- application -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="d3/d3.min.js" async></script>
+        <script src="js/app.js" async></script>
+    </head>
+    <body>
+        <div id="globe" class="main"></div>
+        <div id="slider" class="main"></div>
+        <div id="sidebar" class="main">
+            <label class="sectionMarker">Algorithm Inputs</label>
+            <div class="section inputParms">
+                <label title="Load the selected scenario">Load Scenario</label>
+                <select id="scenario">
+                    <option value="config_racePA.json">Race Across PA</option>
+                    <option value="config_48capitals.json">US Capitals</option>
+                </select>
+                <label title="How many individuals to keep in the population pool">Population size</label>
+                <input type="number" id="populationSize" value="10"/>
+                <label title="How many mutations to try on each individual for each generation">Mutations per generation</label>
+                <input type="number" id="numMutations" value="10"/>
+                <label title="Mimimun generations each individual lives regardless of score">Min lifetime</label>
+                <input type="number" id="minLifetime" value="10"/>
+                <label title="How many generations does a solution live unchanged before we're done">Unchanged generations till solved</label>
+                <input type="number" id="genLimit" value="50"/>
+            </div>
+            <label class="sectionMarker">Controls</label>
+            <div id="controls" class="section">
+                <button id="playButton" type="submit" title="Optimize the route, run until done">
+                    <i class="material-icons">play_arrow</i>
+                </button>
+                <button id="pauseButton" type="submit" title="Pause the running simulation">
+                    <i class="material-icons">pause</i>
+                </button>
+                <button id="stepButton" type="submit" title="Step forward one generation">
+                    <i class="material-icons">skip_next</i>
+                </button>
+                <button id="resetButton" type="submit" title="Reset the problem">
+                    <i class="material-icons">settings_backup_restore</i>
+                </button>
+            </div>
+            <label class="sectionMarker">Best Solution</label>
+            <div class="section bestSolution">
+                <label>Dist(mi):</label> <span id="highScore"></span>
+                <label>Gen:</label> <span id="generation"></span>
+                <label>Longevity:</label> <span id="longevity"></span>
+            </div>
+            <div class="section bestSolution">
+                <label>Avg Time/Gen(ms):</label> <span id="timePerGen"></span>
+                <label>Total Time(s):</label> <span id="totalTime"></span>
+            </div>
+            <label class="sectionMarker">Metrics</label>
+            <div id="graphs" class="section grow">
+                <label title="Graph of the best scoring member of the population in each generation">Best Score</label>
+                <div id="bestScoreGraph"></div>
+                <label title="Graph of population scores in the current generation">Population Score</label>
+                <div id="populationScoreGraph"></div>
+                <label title="Graph of population longevities in the current generation">Population Longevity</label>
+                <div id="populationLongevityGraph"></div>
+            </div>
+        </div>
+    </body>
+</html>
