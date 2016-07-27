@@ -1,7 +1,7 @@
 {
     "params": {
         "populationSize": 20,
-        "numMutations": 1000,
+        "numMutations": 600,
         "minLifetime": 10,
         "genLimit": 50
     },

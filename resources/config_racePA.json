@@ -1,9 +1,9 @@
 {
     "params": {
         "populationSize": 10,
-        "numMutations": 3,
+        "numMutations": 30,
         "minLifetime": 10,
-        "genLimit": 50
+        "genLimit": 30
     },
     "globe": {
         "startView": { "lon": -75.30, "lat": 40.11, "alt": 7e4 },
