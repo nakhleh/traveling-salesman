@@ -1,12 +1,12 @@
 'use strict';
 
-const Cartesian2 = require('../ThirdParty/Cesium/Source/Core/Cartesian2');
-const Cartesian3 = require('../ThirdParty/Cesium/Source/Core/Cartesian3');
-const Color = require('../ThirdParty/Cesium/Source/Core/Color');
-const HorizontalOrigin = require('../ThirdParty/Cesium/Source/Scene/HorizontalOrigin');
-const NearFarScalar = require('../ThirdParty/Cesium/Source/Core/NearFarScalar');
-const PolylineGlowMaterialProperty = require('../ThirdParty/Cesium/Source/DataSources/PolylineGlowMaterialProperty');
-const Viewer = require('../ThirdParty/Cesium/Source/Widgets/Viewer/Viewer');
+const Cartesian2 = require('cesium/Source/Core/Cartesian2');
+const Cartesian3 = require('cesium/Source/Core/Cartesian3');
+const Color = require('cesium/Source/Core/Color');
+const HorizontalOrigin = require('cesium/Source/Scene/HorizontalOrigin');
+const NearFarScalar = require('cesium/Source/Core/NearFarScalar');
+const PolylineGlowMaterialProperty = require('cesium/Source/DataSources/PolylineGlowMaterialProperty');
+const Viewer = require('cesium/Source/Widgets/Viewer/Viewer');
 
 class Globe {
     /**

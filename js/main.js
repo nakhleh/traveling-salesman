@@ -1,9 +1,7 @@
 'use strict';
 
-const Cartesian3 = require('../ThirdParty/Cesium/Source/Core/Cartesian3');
-const Color = require('../ThirdParty/Cesium/Source/Core/Color');
-const Viewer = require('../ThirdParty/Cesium/Source/Widgets/Viewer/Viewer');
-const buildModuleUrl = require('../ThirdParty/Cesium/Source/Core/buildModuleUrl');
+const Cartesian3 = require('cesium/Source/Core/Cartesian3');
+const Color = require('cesium/Source/Core/Color');
 const Globe = require('./Globe');
 const Genetic = require('./Genetic');
 const graphs = require('./graphs');
@@ -22,7 +20,7 @@ var globe = null;
  * Application main
  */
 const main = function() {
-    buildModuleUrl.setBaseUrl('/Cesium');
+    window.CESIUM_BASE_URL = '/Cesium/';
     var container = document.getElementById('globe');
     globe = new Globe(container);
     sliderBindings();

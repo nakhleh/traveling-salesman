@@ -1,5 +1,6 @@
 'use strict';
-// We're including d3 through html, because it doesn't seem to work right with nodes
+
+const d3 = require('d3');
 
 module.exports = {
 
@@ -17,21 +18,21 @@ module.exports = {
         d3.select(container).selectAll('*').remove();
         //console.log(JSON.stringify(data));
 
-        let x = d3.scale.ordinal()
+        let x = d3.scaleBand()
                         .domain(data.series.map(d => d.x))
-                        .rangeRoundBands([0, margins.width], .1);
-        let y = d3.scale.linear()
+                        .rangeRound([0, margins.width], .1);
+        let y = d3.scaleLinear()
                         .domain([0, d3.max(data.series, d => d.y)])
                         .range([margins.height, 0]);
-        let xAxis = d3.svg.axis().scale(x).orient('bottom').tickSize(0);
-        let yAxis = d3.svg.axis().scale(y).orient('left').tickSize(0);
+        let xAxis = d3.axisBottom(x).tickSize(0);
+        let yAxis = d3.axisLeft(y).tickSize(0);
         let svg = addSvgElements(container, margins, xAxis, yAxis);
 
         svg.selectAll(".bar").data(data.series)
                              .enter().append("rect")
                                      .attr("class", "bar")
                                      .attr("x", d => x(d.x))
-                                     .attr("width", x.rangeBand())
+                                     .attr("width", x.bandwidth())
                                      .attr("y", d => y(d.y))
                                      .attr("height", d => margins.height - y(d.y));
     },
@@ -45,20 +46,20 @@ module.exports = {
         if (typeof data.minXMax !== 'undefined' && data.minXMax > xMax) {
             xMax = data.minXMax;
         }
-        let x = d3.scale.linear()
+        let x = d3.scaleLinear()
                         .domain([0, xMax])
                         .range([0, margins.width]);
-        let y = d3.scale.linear()
+        let y = d3.scaleLinear()
                         .domain([0, d3.max(data.series, d => d.y)])
                         .range([margins.height, 0]);
-        let xAxis = d3.svg.axis().scale(x).orient('bottom').tickSize(0);
-        let yAxis = d3.svg.axis().scale(y).orient('left').tickSize(0);
+        let xAxis = d3.axisBottom(x).tickSize(0);
+        let yAxis = d3.axisLeft(y).tickSize(0);
 
         let svg = addSvgElements(container, margins, xAxis, yAxis);
 
-        let valueline = d3.svg.line()
-                              .x(d => x(d.x))
-                              .y(d => y(d.y));
+        let valueline = d3.line()
+                          .x(d => x(d.x))
+                          .y(d => y(d.y));
         svg.append('path').attr('class', 'line')
                           .attr('d', valueline(data.series));
 

@@ -13,8 +13,8 @@ app.use(morgan('combined', {
 // Serve out pages starting from html/index.html
 app.use(express.static(__dirname + '/dist'));
 app.use('/d3', express.static(__dirname + '/node_modules/d3'));
-app.use('/Cesium', express.static(__dirname + '/ThirdParty/Cesium/Build/Cesium'));
-app.use('/iconfont', express.static(__dirname + '/ThirdParty/material-iconfont'));
+app.use('/Cesium', express.static(__dirname + '/node_modules/cesium/Build/Cesium'));
+app.use('/iconfont', express.static(__dirname + '/node_modules/material-design-icons-iconfont/dist'));
 
 // Start server
 const port = 8080;
